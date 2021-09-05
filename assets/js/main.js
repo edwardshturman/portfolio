@@ -45,6 +45,20 @@ function addStar() {
 
 Array(200).fill().forEach(addStar);
 
+
+const spaceTexture = new THREE.TextureLoader().load('../assets/space.jpeg');
+scene.background = spaceTexture;
+
+
+const profileTexture = new THREE.TextureLoader().load('../assets/profile.JPG');
+
+const profile = new THREE.Mesh(
+    new THREE.SphereGeometry(7, 16, 8),
+    new THREE.MeshBasicMaterial( { map: profileTexture } )
+);
+
+scene.add(profile);
+
 function animate() {
     requestAnimationFrame( animate );
 
