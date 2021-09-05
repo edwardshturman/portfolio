@@ -1,0 +1,20 @@
+{
+  "name": "edward-shturman-portfolio",
+  "author": "Edward Shturman",
+  "bugs": "https://github.com/edwardshturman/portfolio/issues",
+  "homepage": "https://edwardshturman.com",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "description": "An experimental portfolio developed using Three.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edwardshturman/portfolio.git"
+  },
+  "private": true,
+  "dependencies": {
+    "three": "^0.132.2"
+  },
+  "devDependencies": {
+    "vite": "^2.5.2"
+  }
+}
