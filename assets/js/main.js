@@ -58,9 +58,23 @@ const profile = new THREE.Mesh(
     new THREE.MeshStandardMaterial( { map: profileTexture } )
 );
 
+
+const moonTexture = new THREE.TextureLoader().load('../assets/purple-moon.png');
+const normalTexture = new THREE.TextureLoader().load('../assets/normal.jpeg');
+
+const moon = new THREE.Mesh(
+    new THREE.SphereGeometry(3, 32, 32),
+    new THREE.MeshStandardMaterial( {
+        map: moonTexture,
+        normalMap: normalTexture
+    } )
 );
 
-scene.add(profile);
+scene.add(profile, moon);
+
+moon.position.x = -10;
+moon.position.z = 30;
+
 
 function animate() {
     requestAnimationFrame( animate );
