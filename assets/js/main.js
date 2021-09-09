@@ -125,6 +125,7 @@ function moveCamera() {
 }
 
 document.body.onscroll = moveCamera;
+moveCamera(); // Initialize camera movement to prevent first load glitch
 
 
 // Animation loop
