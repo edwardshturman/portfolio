@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Urbanist:wght@400;700&display=swap');
+
 :root {
     --dark-bg: rgba(15, 15, 15, 0.95);
     --spacing: 350px;
 
-    font-family: brandon-grotesque, sans-serif;
-    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
     font-style: normal;
 }
 
@@ -26,7 +28,7 @@ main {
 }
 
 h1, h2, h3, blockquote {
-    font-family: elevon, sans-serif;
+    font-family: 'Urbanist', sans-serif;
     font-weight: 700;
     font-style: normal;
 }
