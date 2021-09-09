@@ -73,13 +73,13 @@ Array(200).fill().forEach(addStar);
 
 // Space background
 
-const spaceTexture = new THREE.TextureLoader().load('../assets/space.jpeg');
+const spaceTexture = new THREE.TextureLoader().load('../assets/img/space.jpeg');
 scene.background = spaceTexture;
 
 
 // Profile
 
-const profileTexture = new THREE.TextureLoader().load('../assets/profile.JPG');
+const profileTexture = new THREE.TextureLoader().load('../assets/img/profile.JPG');
 
 
 const profile = new THREE.Mesh(
@@ -95,8 +95,8 @@ profile.position.z = -5;
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load('../assets/purple-moon.png');
-// const normalTexture = new THREE.TextureLoader().load('../assets/normal.jpeg');
+const moonTexture = new THREE.TextureLoader().load('../assets/img/purple-moon.png');
+// const normalTexture = new THREE.TextureLoader().load('../assets/img/normal.jpeg');
 
 const moon = new THREE.Mesh(
     new THREE.SphereGeometry(3, 32, 32),
