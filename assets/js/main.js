@@ -85,6 +85,9 @@ const profile = new THREE.Mesh(
 
 scene.add(profile);
 
+profile.position.x = 2;
+profile.position.z = -5;
+
 
 // Moon
 
