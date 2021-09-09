@@ -92,13 +92,13 @@ profile.position.z = -5;
 // Moon
 
 const moonTexture = new THREE.TextureLoader().load('../assets/purple-moon.png');
-const normalTexture = new THREE.TextureLoader().load('../assets/normal.jpeg');
+// const normalTexture = new THREE.TextureLoader().load('../assets/normal.jpeg');
 
 const moon = new THREE.Mesh(
     new THREE.SphereGeometry(3, 32, 32),
     new THREE.MeshStandardMaterial( {
         map: moonTexture,
-        normalMap: normalTexture
+        // normalMap: normalTexture
     } )
 );
 
