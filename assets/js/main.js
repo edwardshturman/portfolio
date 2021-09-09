@@ -112,9 +112,9 @@ moon.position.z = 30;
 
 function moveCamera() {
     const t = document.body.getBoundingClientRect().top;
-    moon.rotation.x += 0.05;
-    moon.rotation.y += 0.075;
-    moon.rotation.z += 0.05;
+    moon.rotation.x += 0.01;
+    moon.rotation.y += 0.025;
+    moon.rotation.z += 0.01;
 
     profile.rotation.y += 0.01;
     profile.rotation.z += 0.01;
@@ -135,6 +135,8 @@ function animate() {
     torus.rotation.x += 0.01;
     torus.rotation.y += 0.005;
     torus.rotation.z += 0.01;
+
+    moon.rotation.x += 0.005;
 
     // controls.update();
 
