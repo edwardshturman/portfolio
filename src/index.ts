@@ -1,7 +1,12 @@
+// Dependencies
 require('dotenv').config();
 
 const express = require('express');
 const app = express();
+const path = require('path');
+
+// Reset Express views directory to look in dist
+app.set('views', path.join(__dirname, '/dist/views'));
 
 // Set up view engine
 app.set('view engine', 'ejs');
