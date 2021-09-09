@@ -6,7 +6,7 @@ const app = express();
 const path = require('path');
 
 // Reset Express views directory to look in dist
-app.set('views', path.join(__dirname, '/dist/views'));
+app.set('views', path.join(__dirname, '/views'));
 
 // Set up view engine
 app.set('view engine', 'ejs');
