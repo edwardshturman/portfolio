@@ -1,4 +1,6 @@
+// @ts-ignore
 import * as THREE from 'https://cdn.skypack.dev/three@0.132.2';
+// @ts-ignore
 import { OrbitControls } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/controls/OrbitControls.js';
 
 
@@ -58,24 +60,26 @@ function addStar() {
     const material = new THREE.MeshStandardMaterial( { color: 0xffffff } );
     const star = new THREE.Mesh( geometry, material );
 
+    // @ts-ignore
     const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread( 100 ) );
     star.position.set(x, y, z);
 
     scene.add(star);
 }
 
+// @ts-ignore
 Array(200).fill().forEach(addStar);
 
 
 // Space background
 
-const spaceTexture = new THREE.TextureLoader().load('../assets/space.jpeg');
+const spaceTexture = new THREE.TextureLoader().load('../assets/img/space.jpeg');
 scene.background = spaceTexture;
 
 
 // Profile
 
-const profileTexture = new THREE.TextureLoader().load('../assets/profile.JPG');
+const profileTexture = new THREE.TextureLoader().load('../assets/img/profile.JPG');
 
 
 const profile = new THREE.Mesh(
@@ -91,8 +95,8 @@ profile.position.z = -5;
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load('../assets/purple-moon.png');
-// const normalTexture = new THREE.TextureLoader().load('../assets/normal.jpeg');
+const moonTexture = new THREE.TextureLoader().load('../assets/img/purple-moon.png');
+// const normalTexture = new THREE.TextureLoader().load('../assets/img/normal.jpeg');
 
 const moon = new THREE.Mesh(
     new THREE.SphereGeometry(3, 32, 32),
