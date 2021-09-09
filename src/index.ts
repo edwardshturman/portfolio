@@ -15,6 +15,6 @@ app.get('/', (req, res) => {
 app.use('/assets', express.static(__dirname + '/assets'));
 
 // Listens on port 443
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log(`Now listening for requests on port ${process.env.PORT}!`);
 });
