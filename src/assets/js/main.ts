@@ -53,8 +53,8 @@ loader.load( '../assets/fonts/Urbanist_Medium_Regular.json', function ( font ) {
     textObject.position.x = -10;
     textObject.position.z = 15;
     const rotation = setInterval(function(){
-        textObject.rotation.x += 0.01;
-    }, 1000);
+        textObject.rotation.z += 0.01;
+    }, 10);
 } );
 
 
