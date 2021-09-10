@@ -41,7 +41,7 @@ scene.add(icosahedron);
 icosahedron.position.x = -4;
 icosahedron.position.z = 6;
 
-
+/*
 // Add text object
 
 const loader = new THREE.FontLoader();
@@ -64,13 +64,13 @@ loader.load( '../assets/fonts/Urbanist_Medium_Regular.json', function ( font ) {
     scene.add(textObject);
     textObject.position.x = 3;
     textObject.position.z = 40;
-/*
+
     const rotation = setInterval(function(){
         textObject.rotation.y += 0.01;
     }, 10);
-*/
-} );
 
+} );
+*/
 
 // Lighting
 
