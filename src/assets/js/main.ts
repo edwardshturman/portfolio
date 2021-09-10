@@ -38,7 +38,7 @@ loader.load( '../assets/fonts/Urbanist_Medium_Regular.json', function ( font ) {
 
     const textGeometry = new THREE.TextGeometry( 'ARS LONGA, VITA BREVIS', {
         font: font,
-        size: 1,
+        size: 0.5,
         height: 1,
         curveSegments: 12,
         bevelEnabled: false,
@@ -50,8 +50,8 @@ loader.load( '../assets/fonts/Urbanist_Medium_Regular.json', function ( font ) {
     const textMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0xffffff } );
     const textObject = new THREE.Mesh(textGeometry, textMaterial);
     scene.add(textObject);
-    textObject.position.x = 20;
-    textObject.position.z = 45;
+    textObject.position.x = 10;
+    textObject.position.z = 35;
 /*
     const rotation = setInterval(function(){
         textObject.rotation.y += 0.01;
