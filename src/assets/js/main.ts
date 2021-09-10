@@ -41,6 +41,19 @@ scene.add(icosahedron);
 icosahedron.position.x = -4;
 icosahedron.position.z = 6;
 
+
+// Add octahedron object
+
+const octahedronGeometry = new THREE.OctahedronnGeometry ( 1, 0 );
+const octahedronMaterial = new THREE.MeshStandardMaterial( { color: 0xf268ef} );
+const octahedron = new THREE.Mesh ( octahedronGeometry, octahedronMaterial );
+
+scene.add(octahedron);
+
+octahedron.position.x = 8;
+octahedron.position.z = 12;
+
+
 /*
 // Add text object
 
