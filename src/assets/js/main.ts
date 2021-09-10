@@ -47,11 +47,11 @@ loader.load( '../assets/fonts/Urbanist_Black_Regular.json', function ( font ) {
         bevelOffset: 0,
         bevelSegments: 5
     } );
-    const textMaterial = new THREE.MeshPhongMaterial( { color: 0xff0000, specular: 0xffffff } );
+    const textMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0xffffff } );
     const textObject = new THREE.Mesh(textGeometry, textMaterial);
     scene.add(textObject);
-    textObject.position.x = -3;
-    textObject.position.z = 2;
+    textObject.position.x = -10;
+    textObject.position.z = 15;
 } );
 
 
