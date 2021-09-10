@@ -30,6 +30,18 @@ const torus = new THREE.Mesh( geometry, material );
 scene.add(torus);
 
 
+// Add icosahedron object
+
+const icosahedronGeometry = new THREE.IcosahedronGeometry ( 1, 0 );
+const icosahedronMaterial = new THREE.MeshStandardMaterial( { color: 0x58f6ff} );
+const icosahedron = new THREE.Mesh ( icosahedronGeometry, icosahedronMaterial );
+
+scene.add(icosahedron);
+
+icosahedron.position.x = -4;
+icosahedron.position.z = 6;
+
+
 // Add text object
 
 const loader = new THREE.FontLoader();
@@ -184,6 +196,10 @@ function animate() {
     torus.rotation.x += 0.01;
     torus.rotation.y += 0.005;
     torus.rotation.z += 0.01;
+
+    icosahedron.rotation.x += 0.01;
+    icosahedron.rotation.y += 0.005;
+    icosahedron.rotation.z += 0.01;
 
     moon.rotation.x += 0.005;
 
