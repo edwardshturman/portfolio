@@ -52,6 +52,9 @@ loader.load( '../assets/fonts/Urbanist_Black_Regular.json', function ( font ) {
     scene.add(textObject);
     textObject.position.x = -10;
     textObject.position.z = 15;
+    const rotation = setInterval(function(){
+        textObject.rotation.x += 0.001;
+    }, 1000);
 } );
 
 
