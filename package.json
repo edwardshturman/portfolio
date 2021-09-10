@@ -13,7 +13,7 @@
   "main": "src/index.ts",
   "private": true,
   "scripts": {
-    "postinstall": "tsc && mv -i -v src/assets/css dist/assets && mv -i -v src/assets/img dist/assets && mv -i -v src/views dist/",
+    "postinstall": "tsc && mv -i -v src/assets/css dist/assets && mv -i -v src/assets/img dist/assets && mv -i -v src/assets/fonts dist/assets && mv -i -v src/views dist/",
     "start": "node dist/index.js"
   },
   "engines": {

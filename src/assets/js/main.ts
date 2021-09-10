@@ -30,6 +30,29 @@ const torus = new THREE.Mesh( geometry, material );
 scene.add(torus);
 
 
+// Add text object
+
+const loader = new THREE.FontLoader();
+
+loader.load( '../fonts/Urbanist_Black_Regular.json', function ( font ) {
+
+    const textGeometry = new THREE.TextGeometry( 'ARS LONGA, VITA BREVIS', {
+        font: font,
+        size: 80,
+        height: 5,
+        curveSegments: 12,
+        bevelEnabled: true,
+        bevelThickness: 10,
+        bevelSize: 8,
+        bevelOffset: 0,
+        bevelSegments: 5
+    } );
+    const textMaterial = new THREE.MeshPhongMaterial( { color: 0xff0000, specular: 0xffffff } );
+    const textObject = new THREE.Mesh(textGeometry, textMaterial);
+    scene.add(textObject);
+} );
+
+
 // Lighting
 
 const pointLight = new THREE.PointLight(0xffffff);
