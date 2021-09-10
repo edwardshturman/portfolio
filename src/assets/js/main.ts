@@ -35,6 +35,38 @@ const bloomPass = new BloomPass(
 bloomPass.renderToScreen = true;
 composer.addPass(bloomPass);
 
+function resizeRendererToDisplaySize(renderer) {
+    const canvas = renderer.domElement;
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+    const needResize = canvas.width !== width || canvas.height !== height;
+    if (needResize) {
+        renderer.setSize(width, height, false);
+    }
+    return needResize;
+}
+
+let then = 0;
+function render(now) {
+    now *= 0.001;  // convert to seconds
+    const deltaTime = now - then;
+    then = now;
+
+    if (resizeRendererToDisplaySize(renderer)) {
+        const canvas = renderer.domElement;
+        camera.aspect = canvas.clientWidth / canvas.clientHeight;
+        camera.updateProjectionMatrix();
+        composer.setSize(canvas.width, canvas.height);
+    }
+
+    composer.render(deltaTime);
+
+    requestAnimationFrame(render);
+}
+
+requestAnimationFrame(render);
+
+
 const clock = new Clock();
 
 requestAnimationFrame(function render() {
