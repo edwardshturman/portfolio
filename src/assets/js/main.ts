@@ -34,7 +34,7 @@ scene.add(torus);
 
 const loader = new THREE.FontLoader();
 
-loader.load( '../assets/fonts/Urbanist_Black_Regular.json', function ( font ) {
+loader.load( '../assets/fonts/Urbanist_Medium_Regular.json', function ( font ) {
 
     const textGeometry = new THREE.TextGeometry( 'ARS LONGA, VITA BREVIS', {
         font: font,
