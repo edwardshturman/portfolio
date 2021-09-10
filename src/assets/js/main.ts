@@ -32,9 +32,14 @@ const torus = new THREE.Mesh( geometry, material );
 
 scene.add(torus);
 
+
+// Add ASCII effect sphere
+
 const sphere = new THREE.Mesh( new THREE.SphereGeometry( 200, 20, 10 ), new THREE.MeshPhongMaterial( { flatShading: true } ) );
 scene.add(sphere);
 
+sphere.position.x = -10;
+sphere.position.z = 30;
 
 const effect = new AsciiEffect( renderer, ' .:-+*=%@#', { invert: true } );
 effect.setSize( window.innerWidth, window.innerHeight );
