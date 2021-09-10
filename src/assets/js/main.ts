@@ -54,6 +54,18 @@ octahedron.position.x = 8;
 octahedron.position.z = 12;
 
 
+// Add tetrahedron object
+
+const tetrahedronGeometry = new THREE.TetrahedronGeometry ( 1, 0 );
+const tetrahedronMaterial = new THREE.MeshStandardMaterial( { color: 0x74f762} );
+const tetrahedron = new THREE.Mesh ( tetrahedronGeometry, tetrahedronMaterial );
+
+scene.add(tetrahedron);
+
+tetrahedron.position.x = -16;
+tetrahedron.position.z = 24;
+
+
 /*
 // Add text object
 
@@ -217,6 +229,10 @@ function animate() {
     octahedron.rotation.x += 0.01;
     octahedron.rotation.y += 0.005;
     octahedron.rotation.z += 0.01;
+
+    tetrahedron.rotation.x += 0.01;
+    tetrahedron.rotation.y += 0.005;
+    tetrahedron.rotation.z += 0.01;
 
     moon.rotation.x += 0.005;
 
