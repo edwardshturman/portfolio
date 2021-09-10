@@ -5,9 +5,9 @@ import { OrbitControls } from 'https://cdn.skypack.dev/three@0.132.2/examples/js
 // @ts-ignore
 import { EffectComposer } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/postprocessing/EffectComposer.js';
 // @ts-ignore
-import { BloomEffect } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/postprocessing/BloomEffect.js';
+// import { BloomEffect } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/postprocessing/BloomEffect.js';
 // @ts-ignore
-import { EffectPass } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/postprocessing/EffectPass.js';
+// import { EffectPass } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/postprocessing/EffectPass.js';
 // @ts-ignore
 import { RenderPass } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/postprocessing/RenderPass.js';
 // @ts-ignore
@@ -28,7 +28,7 @@ const renderer = new THREE.WebGLRenderer({
 
 const composer = new EffectComposer(renderer);
 composer.addPass(new RenderPass(scene, camera));
-composer.addPass(new EffectPass(camera, new BloomEffect()));
+// composer.addPass(new EffectPass(camera, new BloomEffect()));
 
 const clock = new Clock();
 
