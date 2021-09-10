@@ -214,6 +214,10 @@ function animate() {
     icosahedron.rotation.y += 0.005;
     icosahedron.rotation.z += 0.01;
 
+    octahedron.rotation.x += 0.01;
+    octahedron.rotation.y += 0.005;
+    octahedron.rotation.z += 0.01;
+
     moon.rotation.x += 0.005;
 
     // controls.update();
