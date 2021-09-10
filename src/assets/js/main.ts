@@ -52,9 +52,11 @@ loader.load( '../assets/fonts/Urbanist_Medium_Regular.json', function ( font ) {
     scene.add(textObject);
     textObject.position.x = -10;
     textObject.position.z = 15;
+/*
     const rotation = setInterval(function(){
         textObject.rotation.y += 0.01;
     }, 10);
+*/
 } );
 
 
