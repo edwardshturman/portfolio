@@ -62,8 +62,8 @@ const tetrahedron = new THREE.Mesh ( tetrahedronGeometry, tetrahedronMaterial );
 
 scene.add(tetrahedron);
 
-tetrahedron.position.x = -16;
-tetrahedron.position.z = 24;
+tetrahedron.position.x = -12;
+tetrahedron.position.z = 18;
 
 
 /*
