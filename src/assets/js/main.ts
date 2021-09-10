@@ -44,13 +44,13 @@ requestAnimationFrame(function render() {
 
 });
 
-renderer.setPixelRatio( window.devicePixelRatio );
-renderer.setSize( window.innerWidth, window.innerHeight );
+composer.setPixelRatio( window.devicePixelRatio );
+composer.setSize( window.innerWidth, window.innerHeight );
 
 camera.position.x = -3;
 camera.position.z = 30;
 
-renderer.render( scene, camera );
+composer.render( scene, camera );
 
 
 // Add torus object
@@ -173,7 +173,7 @@ function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
 
-    renderer.setSize( window.innerWidth, window.innerHeight );
+    composer.setSize( window.innerWidth, window.innerHeight );
 
 }
 
@@ -191,7 +191,7 @@ function animate() {
 
     // controls.update();
 
-    renderer.render( scene, camera );
+    composer.render( scene, camera );
 }
 
 animate();
