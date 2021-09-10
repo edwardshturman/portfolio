@@ -2,13 +2,10 @@
 import * as THREE from 'https://cdn.skypack.dev/three@0.132.2';
 // @ts-ignore
 import { OrbitControls } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/controls/OrbitControls.js';
-// @ts-ignore
-import { AsciiEffect } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/effects/AsciiEffect.js';
 
 
 // Setup
 
-const start = Date.now();
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera ( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 const renderer = new THREE.WebGLRenderer({
@@ -31,26 +28,6 @@ const material = new THREE.MeshStandardMaterial( { color: 0xff6347 } );
 const torus = new THREE.Mesh( geometry, material );
 
 scene.add(torus);
-
-
-// Add ASCII effect sphere
-
-const sphere = new THREE.Mesh( new THREE.SphereGeometry( 200, 20, 10 ), new THREE.MeshPhongMaterial( { flatShading: true } ) );
-scene.add(sphere);
-
-sphere.position.x = -10;
-sphere.position.z = 30;
-
-const effect = new AsciiEffect( renderer, ' .:-+*=%@#', { invert: true } );
-effect.setSize( window.innerWidth, window.innerHeight );
-effect.domElement.style.color = 'white';
-effect.domElement.style.backgroundColor = 'black';
-
-// Special case: append effect.domElement, instead of renderer.domElement.
-// AsciiEffect creates a custom domElement (a div container) where the ASCII elements are placed.
-
-document.body.appendChild( effect.domElement );
-
 
 
 // Lighting
@@ -165,22 +142,14 @@ function onWindowResize() {
     camera.updateProjectionMatrix();
 
     renderer.setSize( window.innerWidth, window.innerHeight );
-    effect.setSize( window.innerWidth, window.innerHeight );
 
 }
-
 
 
 // Animation loop
 
 function animate() {
     requestAnimationFrame( animate );
-
-    const timer = Date.now() - start;
-
-    sphere.position.y = Math.abs( Math.sin( timer * 0.002 ) ) * 150;
-    sphere.rotation.x = timer * 0.0003;
-    sphere.rotation.z = timer * 0.0002;
 
     torus.rotation.x += 0.01;
     torus.rotation.y += 0.005;
@@ -191,7 +160,6 @@ function animate() {
     // controls.update();
 
     renderer.render( scene, camera );
-    effect.render( scene, camera );
 }
 
 animate();
