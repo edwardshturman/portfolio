@@ -38,10 +38,10 @@ loader.load( '../assets/fonts/Urbanist_Black_Regular.json', function ( font ) {
 
     const textGeometry = new THREE.TextGeometry( 'ARS LONGA, VITA BREVIS', {
         font: font,
-        size: 8,
-        height: 5,
+        size: 2,
+        height: 3,
         curveSegments: 12,
-        bevelEnabled: true,
+        bevelEnabled: false,
         bevelThickness: 10,
         bevelSize: 8,
         bevelOffset: 0,
