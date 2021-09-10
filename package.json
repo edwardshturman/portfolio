@@ -25,6 +25,7 @@
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "postprocessing": "^6.22.5",
     "source-map-loader": "^3.0.0",
     "three": "^0.132.2",
     "ts-loader": "^9.2.5"

@@ -2,6 +2,16 @@
 import * as THREE from 'https://cdn.skypack.dev/three@0.132.2';
 // @ts-ignore
 import { OrbitControls } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/controls/OrbitControls.js';
+// @ts-ignore
+import { EffectComposer } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/postprocessing/EffectComposer.js';
+// @ts-ignore
+import { BloomEffect } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/postprocessing/BloomEffect.js';
+// @ts-ignore
+import { EffectPass } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/postprocessing/EffectPass.js';
+// @ts-ignore
+import { RenderPass } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/postprocessing/RenderPass.js';
+// @ts-ignore
+import { Clock } from 'https://cdn.skypack.dev/three@0.132.2';
 
 
 // Setup
@@ -10,6 +20,23 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera ( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 const renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector('#bg'),
+    powerPreference: 'high-performance',
+    antialias: true,
+    stencil: false,
+    depth: true
+});
+
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+composer.addPass(new EffectPass(camera, new BloomEffect()));
+
+const clock = new Clock();
+
+requestAnimationFrame(function render() {
+
+    requestAnimationFrame(render);
+    composer.render(clock.getDelta());
+
 });
 
 renderer.setPixelRatio( window.devicePixelRatio );
