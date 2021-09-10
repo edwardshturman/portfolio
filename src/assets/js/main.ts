@@ -2,14 +2,6 @@
 import * as THREE from 'https://cdn.skypack.dev/three@0.132.2';
 // @ts-ignore
 import { OrbitControls } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/controls/OrbitControls.js';
-// @ts-ignore
-import { EffectComposer } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/postprocessing/EffectComposer.js';
-// @ts-ignore
- import { BloomPass } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/postprocessing/BloomPass.js';
-// @ts-ignore
-import { RenderPass } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/postprocessing/RenderPass.js';
-// @ts-ignore
-import { Clock } from 'https://cdn.skypack.dev/three@0.132.2';
 
 
 // Setup
@@ -18,71 +10,15 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera ( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 const renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector('#bg'),
-    powerPreference: 'high-performance',
-    antialias: true,
-    stencil: false,
-    depth: true
 });
 
-const composer = new EffectComposer(renderer);
-composer.addPass(new RenderPass(scene, camera));
-const bloomPass = new BloomPass(
-    1,    // strength
-    25,   // kernel size
-    4,    // sigma ?
-    256,  // blur render target resolution
-);
-bloomPass.renderToScreen = true;
-composer.addPass(bloomPass);
-
-function resizeRendererToDisplaySize(renderer) {
-    const canvas = renderer.domElement;
-    const width = canvas.clientWidth;
-    const height = canvas.clientHeight;
-    const needResize = canvas.width !== width || canvas.height !== height;
-    if (needResize) {
-        renderer.setSize(width, height, false);
-    }
-    return needResize;
-}
-
-let then = 0;
-function render(now) {
-    now *= 0.001;  // convert to seconds
-    const deltaTime = now - then;
-    then = now;
-
-    if (resizeRendererToDisplaySize(renderer)) {
-        const canvas = renderer.domElement;
-        camera.aspect = canvas.clientWidth / canvas.clientHeight;
-        camera.updateProjectionMatrix();
-        composer.setSize(canvas.width, canvas.height);
-    }
-
-    composer.render(deltaTime);
-
-    requestAnimationFrame(render);
-}
-
-requestAnimationFrame(render);
-
-
-const clock = new Clock();
-
-requestAnimationFrame(function render() {
-
-    requestAnimationFrame(render);
-    composer.render(clock.getDelta());
-
-});
-
-composer.setPixelRatio( window.devicePixelRatio );
-composer.setSize( window.innerWidth, window.innerHeight );
+renderer.setPixelRatio( window.devicePixelRatio );
+renderer.setSize( window.innerWidth, window.innerHeight );
 
 camera.position.x = -3;
 camera.position.z = 30;
 
-composer.render( scene, camera );
+renderer.render( scene, camera );
 
 
 // Add torus object
@@ -223,7 +159,7 @@ function animate() {
 
     // controls.update();
 
-    composer.render( scene, camera );
+    renderer.render( scene, camera );
 }
 
 animate();
