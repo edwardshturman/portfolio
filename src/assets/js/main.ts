@@ -44,7 +44,7 @@ icosahedron.position.z = 6;
 
 // Add octahedron object
 
-const octahedronGeometry = new THREE.OctahedronnGeometry ( 1, 0 );
+const octahedronGeometry = new THREE.OctahedronGeometry ( 1, 0 );
 const octahedronMaterial = new THREE.MeshStandardMaterial( { color: 0xf268ef} );
 const octahedron = new THREE.Mesh ( octahedronGeometry, octahedronMaterial );
 
