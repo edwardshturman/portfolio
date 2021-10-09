@@ -6,7 +6,7 @@
 
 ---
 
-Check it out [here](threejs-portfolio.herokuapp.com)!
+Check it out [here](https://threejs-portfolio.herokuapp.com)!
 
 > An experimental and creative attempt at a portfolio using 3D rendering.
 
